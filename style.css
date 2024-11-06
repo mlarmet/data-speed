@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+h1,
+h2,
+p {
+	margin: 0;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-family: "Jura", sans-serif;
+	font-weight: bold;
+	font-style: normal;
+
+	background: linear-gradient(var(--angle), #000000 0%, #3356e1 100%);
+	background-size: 200%;
+
+	color: #FFF;
+
+	margin: 0;
+
+	padding: 2em;
+
+	animation: 20s linear bg-anim infinite;
+}
+
+@property --angle {
+	syntax: '<angle>';
+	inherits: false;
+	initial-value: 0deg;
+}
+
+@keyframes bg-anim {
+	from {
+		--angle: 0deg;
+	}
+
+
+	to {
+		--angle: 360deg;
+	}
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	gap: 3em;
+
+	background-color: #000;
+	border-radius: 5px;
+
+	padding: 3rem 4rem;
+
+	max-height: 100%;
+
+	overflow: auto;
+}
+
+.input-box {
+	display: flex;
+	flex-direction: column;
+
+	gap: 1em;
+}
+
+
+.input-row {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+
+	gap: 0.5em;
+	padding: 0.5em;
+}
+
+input,
+select {
+	font-family: "Jura", sans-serif;
+	font-weight: bold;
+	font-style: normal;
+
+	padding: 0.5rem;
+	height: 36px;
+}
+
+input {
+	flex: 1;
+	min-width: 30px;
+}
+
+.icon {
+	display: flex;
+	flex-direction: row;
+
+	gap: 1em;
+
+	align-items: center;
+	justify-content: center;
+}
+
+#time #time-amount {
+	text-align: center;
+}
+
+@media (max-width: 400px) {
+	body {
+		padding: 1em;
+	}
+
+	main {
+		padding: 1.5rem 2rem;
+	}
+}

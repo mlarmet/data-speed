@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Speed calculation</title>
+
+	<link rel="canonical" href="http://mlarmet.github.io/fired" />
+
+	<!-- FONT -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<link
+		href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Lexend+Exa:wght@100..900&display=swap"
+		rel="stylesheet">
+
+	<!-- STYLE -->
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
+	<main>
+		<div class="input-box">
+			<label for="speed" class="icon">
+				<img src="./assets/speed.svg" class="icon-svg" alt="speed" />
+				<span class="icon-text">Speed ( /s) :</span>
+			</label>
+
+			<div class="input-row">
+				<input type="number" min="0" value="0" name="speed" id="speed" />
+
+				<select name="speed-unit" id="speed-unit">
+					<option value="o">o</option>
+					<option value="ko">Ko</option>
+					<option value="mo">Mo</option>
+					<option value="go">Go</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="input-box">
+			<label for="data" class="icon">
+				<img src="./assets/data.svg" class="icon-svg" alt="data" />
+				<span class="icon-text">Data :</span>
+			</label>
+
+			<div class="input-row">
+				<input type="number" min="0" value="0" name="data" id="data" />
+
+				<select name="data-unit" id="data-unit">
+					<option value="o">o</option>
+					<option value="ko">Ko</option>
+					<option value="mo">Mo</option>
+					<option value="go">Go</option>
+				</select>
+			</div>
+		</div>
+
+		<div id="time" class="input-box">
+			<div class="icon">
+				<img src="./assets/time.svg" class="icon-svg" alt="time" />
+				<span class="icon-text">Time : </span>
+			</div>
+
+			<h2 id="time-amount">0 s</h2>
+		</div>
+	</main>
+
+	<script src="./main.js"></script>
+
+</body>
+
+</html>
