@@ -2,6 +2,13 @@ const KO_FACTOR = 1024;
 const MO_FACTOR = KO_FACTOR * 1024;
 const GO_FACTOR = MO_FACTOR * 1024;
 
+const UNIT_FACTORS = {
+	o: 1,
+	ko: KO_FACTOR,
+	mo: MO_FACTOR,
+	go: GO_FACTOR,
+};
+
 const speedInput = document.getElementById("speed");
 const dataInput = document.getElementById("data");
 
@@ -11,31 +18,22 @@ const dataUnitInput = document.getElementById("data-unit");
 const timeAmount = document.getElementById("time-amount");
 
 function toHHMMSS(seconds) {
-	const hrs = Math.floor(seconds / 3600);
+	const hours = Math.floor(seconds / 3600);
 	const mins = Math.floor((seconds % 3600) / 60);
 	const secs = Math.floor(seconds % 60);
 
-	// Pad with leading zeros and format as HH:MM:SS
-	const formattedTime = String(hrs).padStart(2, "0") + " h " + String(mins).padStart(2, "0") + " m " + String(secs).padStart(2, "0");
+	// Show nb days
+	if (hours >= 24) {
+		return `${Math.floor(hours / 24)} days`;
+	}
 
-	return formattedTime;
+	// Pad with leading zeros and format as HH:MM:SS
+	return `${String(hours).padStart(2, "0")} h ${String(mins).padStart(2, "0")} m ${String(secs).padStart(2, "0")}`;
 }
 
 function getOctets(data, unit) {
-	switch (unit) {
-		case "o":
-			return data;
-		case "ko":
-			return data * KO_FACTOR;
-		case "mo":
-			return data * MO_FACTOR;
-		case "go":
-			return data * GO_FACTOR;
-		default:
-			break;
-	}
-
-	return 0;
+	const factor = UNIT_FACTORS[unit];
+	return factor ? data * factor : 0;
 }
 
 function getTime(timeInSec) {
