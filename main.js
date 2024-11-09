@@ -51,8 +51,8 @@ function getTime(timeInSec) {
 }
 
 function calcTime() {
-	const speed = parseInt(speedInput.value || 0);
-	const data = parseInt(dataInput.value || 0);
+	const speed = parseFloat(speedInput.value || 0.0);
+	const data = parseFloat(dataInput.value || 0.0);
 
 	if (speed === 0 || data === 0) {
 		return;
