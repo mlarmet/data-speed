@@ -28,7 +28,7 @@ function toHHMMSS(seconds) {
 	}
 
 	// Pad with leading zeros and format as HH:MM:SS
-	return `${String(hours).padStart(2, "0")} h ${String(mins).padStart(2, "0")} m ${String(secs).padStart(2, "0")}`;
+	return `${String(hours).padStart(2, "0")} h ${String(mins).padStart(2, "0")} m ${String(secs).padStart(2, "0")} s`;
 }
 
 function getOctets(data, unit) {
